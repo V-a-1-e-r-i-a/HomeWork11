@@ -1,8 +1,7 @@
 public class Main {
 
     //Для 1 задачи
-    public static void calculationYear(int u) {
-        int i = u;
+    public static void calculationYear(int i) {
         if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0) {
             System.out.println("Номер года - " + i + " является високосным годом");
         } else {
@@ -11,9 +10,7 @@ public class Main {
     }
 
     //Для 2 задачи
-    public static void phone (int r, int t) {
-        int s = r;
-        int h = t;
+    public static void phone (int s, int h) {
         if (s == 0 && h < 2015) {
             System.out.println("Установите lite-версию для Ios");
         } else if (s == 0 && h >= 2015) {
