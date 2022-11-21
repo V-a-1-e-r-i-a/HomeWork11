@@ -29,8 +29,17 @@ public class Main {
 
     //Для 3 задачи
     public static void  delivery (int g) {
-        int deliveryTime = g / 40;
-        deliveryTime++;
+        int deliveryDistance1 = g;
+        int deliveryTime = 0;
+        if (deliveryDistance1 >= 20) {
+            deliveryTime++;
+        }
+        if (deliveryDistance1 >= 60) {
+            deliveryTime++;
+        }
+        if (deliveryDistance1 >= 100) {
+            deliveryTime++;
+        }
         System.out.println("Потребуется дней - " + deliveryTime);
     }
 
