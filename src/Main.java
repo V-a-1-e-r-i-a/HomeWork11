@@ -1,48 +1,47 @@
 public class Main {
 
     //Для 1 задачи
-    public static void calculationYear(int i) {
-        if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0) {
-            System.out.println("Номер года - " + i + " является високосным годом");
+    public static void calculationYear(int year) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            System.out.println("Номер года - " + year + " является високосным годом");
         } else {
-            System.out.println("Номер года - " + i + " не я вляется високосным годом");
+            System.out.println("Номер года - " + year + " не я вляется високосным годом");
         }
     }
 
     //Для 2 задачи
-    public static void phone (int s, int h) {
-        if (s == 0 && h < 2015) {
+    public static void phone(int typeOc, int yearDevice) {
+        if (typeOc == 0 && yearDevice < 2015) {
             System.out.println("Установите lite-версию для Ios");
-        } else if (s == 0 && h >= 2015) {
+        } else if (typeOc == 0 && yearDevice >= 2015) {
             System.out.println("Вам не нужно установите lite-версию для Ios");
         }
-        if (s == 1 && h < 2015) {
+        if (typeOc == 1 && yearDevice < 2015) {
             System.out.println("Установите lite-версию для Android");
-        } else if (s == 1 && h >= 2015) {
+        } else if (typeOc == 1 && yearDevice >= 2015) {
             System.out.println("Вам не нужно установите lite-версию для Android");
         }
-        if (s > 1 || h < 1876 && h > 2022) {
+        if (typeOc > 1 || yearDevice < 1876 && yearDevice > 2022) {
             System.out.println("Проверьте корректность вводимых данных");
         }
     }
 
 
     //Для 3 задачи
-    public static void  delivery (int g) {
-        int deliveryDistance1 = g;
-        int deliveryTime = 0;
-        if (deliveryDistance1 >= 20) {
+    public static void delivery(int deliveryDistance) {
+        int deliveryTime = 1;
+        if (deliveryDistance >= 20 && deliveryDistance < 61) {
             deliveryTime++;
         }
-        if (deliveryDistance1 >= 60) {
-            deliveryTime++;
+        if (deliveryDistance >= 61 && deliveryDistance < 101) {
+            deliveryTime += 2;
         }
-        if (deliveryDistance1 >= 100) {
+        if (deliveryDistance >= 101) {
+            deliveryTime = 1 + (deliveryDistance - 21) / 40;
             deliveryTime++;
         }
         System.out.println("Потребуется дней - " + deliveryTime);
     }
-
     public static void main (String[]args) {
 
         //Задание 1
@@ -58,7 +57,7 @@ public class Main {
 
         //Задание 3
         System.out.println("Задание 3");
-        int deliveryDistance = 60;
+        int deliveryDistance = 3000;
         delivery(deliveryDistance);
     }
 }
