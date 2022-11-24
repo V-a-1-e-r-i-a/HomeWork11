@@ -30,17 +30,10 @@ public class Main {
     //Для 3 задачи
     public static void delivery(int deliveryDistance) {
         int deliveryTime = 1;
-        if (deliveryDistance >= 20 && deliveryDistance < 61) {
-            deliveryTime++;
+        if (deliveryDistance > 20) {
+            deliveryTime = 2 + (deliveryDistance - 21) / 40;
         }
-        if (deliveryDistance >= 61 && deliveryDistance < 101) {
-            deliveryTime += 2;
-        }
-        if (deliveryDistance >= 101) {
-            deliveryTime = 1 + (deliveryDistance - 21) / 40;
-            deliveryTime++;
-        }
-        System.out.println("Потребуется дней - " + deliveryTime);
+        System.out.println("Потребуется дней: " + deliveryTime);
     }
     public static void main (String[]args) {
 
